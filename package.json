@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "antd": "^3.2.3",
+    "availity-reactstrap-validation": "^1.4.3",
+    "es6-promise": "^4.2.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
