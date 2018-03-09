@@ -5,7 +5,6 @@ import api from "aiya_sdk_node";
 import Cookies from 'universal-cookie'
 import { Table, Modal } from 'antd'
 import { Input, Col, Row, Label, Button, ButtonGroup } from 'reactstrap';
-import { AvForm, AvField, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import 'antd/dist/antd.css';
 const cookies = new Cookies()
 
@@ -40,13 +39,10 @@ class App extends Component {
         api.module = 'nsc'
         api.get_list("NS Member", '*')
             .then(res => {
-                console.log(res.message)
                 let dataSource = []
                 res.message.map((message, index) => {
                     const person = { ...message, key: index }
-                    // console.log(person)
                     dataSource.push(person)
-                    console.log(dataSource)
                 })
 
                 this.setState({ dataSource });
@@ -104,12 +100,12 @@ class App extends Component {
 }
     }
    
-    // api.call({
-    //     method: 'nsc.client.register',
-    //     args : data
-    //   }).then(res => {
-    //     window.location.reload();
-    //   })
+    api.call({
+        method: 'nsc.client.register',
+        args : data
+      }).then(res => {
+        window.location.reload();
+      })
  console.log(data)
   }
 
